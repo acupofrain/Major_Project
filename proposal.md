@@ -6,7 +6,7 @@ something here
 ## Timeline:
 
 ## Must have's:
-- [ ] a
+- [x] a
 - [ ] b
 
 ## Nice to have's:
