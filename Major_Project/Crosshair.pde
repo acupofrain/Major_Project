@@ -10,7 +10,7 @@ class Crosshair {
     y = height/2;
     radius = 15;
     crossLength = 25;
-    speed = 8;
+    speed = 5;
   }
   
   //behaviours
@@ -26,19 +26,17 @@ class Crosshair {
     x = constrain(x, 0, width);
     y = constrain(y, 0, height);
     
-    if (key == CODED) {
-      if (keyCode == LEFT) {
-        x -= speed;
-      }
-      else if (keyCode == RIGHT) {
-       x += speed;
-      }
-      else if (keyCode == UP) {
-       y -= speed;
-      }
-      else if (keyCode == DOWN) {
-       y += speed;
-      }
+    if (movingLeft) {
+      x -= speed;
+    }
+    if (movingRight) {
+      x += speed;
+    }
+    if (movingUp) {
+      y -= speed;
+    }
+    if (movingDown) {
+      y += speed;
     }
   }
   
