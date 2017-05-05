@@ -1,0 +1,59 @@
+class Crosshair {
+  //data
+  int x, y;
+  int radius, crossLength;
+  int speed;
+  
+  //constructors
+  Crosshair() {
+    x = width/2;
+    y = height/2;
+    radius = 15;
+    crossLength = 25;
+    speed = 8;
+  }
+  
+  //behaviours
+  void display() {
+    stroke(255, 0, 0);
+    strokeWeight(5);
+    ellipse(x, y, radius*2, radius*2);
+    line(x-crossLength, y, x+crossLength, y);
+    line(x, y-crossLength, x, y+crossLength);
+  }
+  
+  void move() {
+    x = constrain(x, 0, width);
+    y = constrain(y, 0, height);
+    
+    if (key == CODED) {
+      if (keyCode == LEFT) {
+        x -= speed;
+      }
+      else if (keyCode == RIGHT) {
+       x += speed;
+      }
+      else if (keyCode == UP) {
+       y -= speed;
+      }
+      else if (keyCode == DOWN) {
+       y += speed;
+      }
+    }
+  }
+  
+  void fire() {
+    
+  }
+  
+  void shake() {
+    int xChange = int(random(-3, 3));
+    int yChange = int(random(-3, 3));
+    
+    
+  }
+  
+  void focus() {
+    
+  }
+}
