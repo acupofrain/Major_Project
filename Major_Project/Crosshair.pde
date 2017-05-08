@@ -4,7 +4,7 @@ class Crosshair {
   int radius, crossLength;
   int speed;
   
-  //constructors
+  //constructor
   Crosshair() {
     x = width/2;
     y = height/2;
@@ -44,10 +44,7 @@ class Crosshair {
     
   }
   
-  void shake() {
-    int xChange = int(random(-3, 3));
-    int yChange = int(random(-3, 3));
-    
+  void shake() {   
     
   }
   
