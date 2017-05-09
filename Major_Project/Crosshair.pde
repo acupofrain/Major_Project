@@ -17,6 +17,7 @@ class Crosshair {
   void display() {
     stroke(255, 0, 0);
     strokeWeight(5);
+    noFill();
     ellipse(x, y, radius*2, radius*2);
     line(x-crossLength, y, x+crossLength, y);
     line(x, y-crossLength, x, y+crossLength);
