@@ -6,9 +6,11 @@ class Speech {
   color textColor;
   int xSpeed, ySpeed;
   boolean isShot;
+  int speechNumber;
   
   //constructor
-  Speech() {
+  Speech(int _speechNumber) {
+    speechNumber = _speechNumber;
     x = 600;
     y = 200;
     aSpeech = "This is a demo.";
