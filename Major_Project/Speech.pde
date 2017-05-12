@@ -9,16 +9,29 @@ class Speech {
   int speechNumber;
   
   //constructor
+  //Speech() {
+  //  x = 600;
+  //  y = 200;
+  //  aSpeech = "This is a demo.";
+  //  fontSize = 40;
+  //  speechWidth = int(textWidth(aSpeech));
+  //  speechHeight = 40;
+  //  textColor = color(0);
+  //  xSpeed = -5;
+  //  ySpeed = 0;
+  //  isShot = false;
+  //}
+  
   Speech(int _speechNumber) {
     speechNumber = _speechNumber;
     x = 600;
-    y = 200;
+    y = 200 + speechNumber*20;
     aSpeech = "This is a demo.";
     fontSize = 40;
     speechWidth = int(textWidth(aSpeech));
     speechHeight = 40;
     textColor = color(0);
-    xSpeed = -5;
+    xSpeed = -3;
     ySpeed = 0;
     isShot = false;
   }
