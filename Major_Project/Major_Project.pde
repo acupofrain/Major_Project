@@ -1,3 +1,15 @@
+//Project Name:      Arrays of Objects (Major Project Milestone)
+//
+//Author:      Wendy Han
+//
+//Created Date:      2017/05/12
+//
+//Description:      I used this assignment as a milestone for my major project. The things that I have included
+//                  in this version: a crosshair which can be controled by the direction keys on the keyboard, 
+//                  multiple speeches(enemies) floating through the screen at different height and speed. I will
+//                  continue working on the collision with text part in the rest of this month.
+
+
 Crosshair theCrosshair;
 Speech[] theSpeech;
 boolean movingLeft, movingRight, movingUp, movingDown;
