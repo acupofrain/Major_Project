@@ -7,34 +7,35 @@ class Speech {
   int xSpeed, ySpeed;
   boolean isShot;
   int speechNumber;
+  int crosshairX, crosshairY;
   
   //constructor
-  //Speech() {
+  Speech() {
+   x = 600;
+   y = 200;
+   aSpeech = "This is a demo.";
+   fontSize = 40;
+   speechWidth = int(textWidth(aSpeech));
+   speechHeight = 40;
+   textColor = color(0);
+   xSpeed = -5;
+   ySpeed = 0;
+   //isShot = false;
+  }
+  
+  //Speech(int _speechNumber) {
+  //  speechNumber = _speechNumber;
   //  x = 600;
-  //  y = 200;
+  //  y = 100+speechNumber*40;
   //  aSpeech = "This is a demo.";
   //  fontSize = 40;
   //  speechWidth = int(textWidth(aSpeech));
   //  speechHeight = 40;
   //  textColor = color(0);
-  //  xSpeed = -5;
+  //  xSpeed = -1*speechNumber;
   //  ySpeed = 0;
   //  isShot = false;
   //}
-  
-  Speech(int _speechNumber) {
-    speechNumber = _speechNumber;
-    x = 600;
-    y = 100+speechNumber*40;
-    aSpeech = "This is a demo.";
-    fontSize = 40;
-    speechWidth = int(textWidth(aSpeech));
-    speechHeight = 40;
-    textColor = color(0);
-    xSpeed = -1*speechNumber;
-    ySpeed = 0;
-    isShot = false;
-  }
   
   //behaviours
   void display() {
@@ -51,7 +52,11 @@ class Speech {
     }
   }
   
-  void checkStatus() {
+  void checkStatus(boolean isFiring, int crosshairX, int crosshairY) {
+    isShot = isFiring;
     
+    if (isShot) {
+      
+    }
   }
 }

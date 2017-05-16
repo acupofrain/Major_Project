@@ -3,6 +3,7 @@ class Crosshair {
   int x, y;
   int radius, crossLength;
   int speed;
+  boolean isFiring;
   
   //constructor
   Crosshair() {
@@ -11,6 +12,7 @@ class Crosshair {
     radius = 15;
     crossLength = 25;
     speed = 5;
+    isFiring = false;
   }
   
   //behaviours
@@ -42,7 +44,9 @@ class Crosshair {
   }
   
   void fire() {
-    
+    if (key == ' ') {
+      isFiring = true;
+    }
   }
   
   void shake() {   

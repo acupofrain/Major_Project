@@ -11,32 +11,43 @@
 
 
 Crosshair theCrosshair;
-Speech[] theSpeech;
-boolean movingLeft, movingRight, movingUp, movingDown;
+//Speech[] theSpeech;
+Speech theSpeech;
+boolean movingLeft, movingRight, movingUp, movingDown, isFiring;
 
 void setup() {
   size(800, 450);
   theCrosshair = new Crosshair();
-  theSpeech = new Speech[6];
-  for (int i=0; i<theSpeech.length; i++) {
-    theSpeech[i] = new Speech(i+1);
-  }
+  
+  //theSpeech = new Speech[6];
+  //for (int i=0; i<theSpeech.length; i++) {
+  //  theSpeech[i] = new Speech(i+1);
+  //}
+  
+  theSpeech = new Speech();
   movingLeft = false;
   movingRight = false;
   movingUp = false;
   movingDown = false;
+  isFiring = false;
 }
 
 void draw() {
   background(255);
   
-  for (int i=0; i<theSpeech.length; i++) {
-    theSpeech[i].move();
-    theSpeech[i].display();
-  }    
+  //for (int i=0; i<theSpeech.length; i++) {
+  //  theSpeech[i].move();
+  //  theSpeech[i].display();
+  //}    
   
+  theSpeech.move();
+  theSpeech.display();
   theCrosshair.move();
   theCrosshair.display();
+  theSpeech.checkStatus(isFiring, theCrosshair.x, theCrosshair.y);
+  
+  //println(str(theCrosshair.x));
+  //println(str(theCrosshair.y));
 }
 
 void keyPressed() {
@@ -54,6 +65,10 @@ void keyPressed() {
       movingDown = true;
     }
   }
+  
+  if (key == ' ') {
+    isFiring = true;
+  } 
 }
 
 void keyReleased() {
