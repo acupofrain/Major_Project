@@ -86,4 +86,8 @@ void keyReleased() {
       movingDown = false;
     }
   }
+  
+  if (key == ' ') {
+   isFiring = false;
+  } 
 }

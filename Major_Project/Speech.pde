@@ -11,16 +11,14 @@ class Speech {
   
   //constructor
   Speech() {
-   x = 600;
-   y = 200;
+   x = width;
+   y = height/2;
    aSpeech = "This is a demo.";
-   fontSize = 40;
-   speechWidth = int(textWidth(aSpeech));
+   fontSize = 40;   
    speechHeight = 40;
    textColor = color(0);
    xSpeed = -5;
    ySpeed = 0;
-   //isShot = false;
   }
   
   //Speech(int _speechNumber) {
@@ -46,17 +44,29 @@ class Speech {
   }
   
   void move() {
-    x += xSpeed;
+    int temp = xSpeed/2;
+    
     if (x <= 0) {
       x = width;
+    } else if ((x>width/4) && (x<(width/4)*2)) {
+      x += temp;
+    } else {
+      x += xSpeed;
     }
   }
   
   void checkStatus(boolean isFiring, int crosshairX, int crosshairY) {
     isShot = isFiring;
+    this.crosshairX = crosshairX;
+    this.crosshairY = crosshairY;
+    speechWidth = int(textWidth(aSpeech));
     
     if (isShot) {
-      
+      if ((crosshairX > x) && (crosshairX < x+speechWidth) && (crosshairY > y-speechHeight) && (crosshairY < y)) {
+        println("correct!");
+      } else {
+        println("wrong!");
+      }
     }
   }
 }
