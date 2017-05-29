@@ -6,19 +6,23 @@ class Speech {
   color textColor;
   int xSpeed, ySpeed;
   boolean isShot;
-  int speechNumber;
+  //int speechNumber;
   int crosshairX, crosshairY;
+  boolean isFinished;
+  float rotateAngle;
   
   //constructor
   Speech() {
-   x = width;
-   y = height/2;
-   aSpeech = "This is a demo.";
-   fontSize = 40;   
-   speechHeight = 40;
-   textColor = color(0);
-   xSpeed = -5;
-   ySpeed = 0;
+    x = width;
+    y = height/2;
+    aSpeech = "This is a demo.";
+    fontSize = 40;   
+    speechHeight = 40;
+    textColor = color(0);
+    xSpeed = -5;
+    ySpeed = 0;
+    isFinished = false;
+    rotateAngle = 0;
   }
   
   //Speech(int _speechNumber) {
@@ -47,7 +51,7 @@ class Speech {
     int temp = xSpeed/2;
     
     if (x <= 0) {
-      x = width;
+      isFinished = true;
     } else if ((x>width/4) && (x<(width/4)*2)) {
       x += temp;
     } else {
@@ -63,7 +67,9 @@ class Speech {
     
     if (isShot) {
       if ((crosshairX > x) && (crosshairX < x+speechWidth) && (crosshairY > y-speechHeight) && (crosshairY < y)) {
-        println("correct!");
+        textColor = color(0);
+        xSpeed = 0;
+        ySpeed = 0;
       } else {
         println("wrong!");
       }

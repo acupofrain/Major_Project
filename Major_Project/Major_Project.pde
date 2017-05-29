@@ -11,9 +11,9 @@
 
 
 Crosshair theCrosshair;
-//Speech[] theSpeech;
-Speech theSpeech;
+Speech[] theSpeech;
 boolean movingLeft, movingRight, movingUp, movingDown, isFiring;
+int state;
 
 void setup() {
   size(800, 450);
@@ -24,12 +24,18 @@ void setup() {
   //  theSpeech[i] = new Speech(i+1);
   //}
   
-  theSpeech = new Speech();
+  theSpeech = new Speech[3];
+  theSpeech[0] = new Statement1();
+  theSpeech[1] = new Statement2();
+  theSpeech[2] = new Statement3();
+  
   movingLeft = false;
   movingRight = false;
   movingUp = false;
   movingDown = false;
   isFiring = false;
+  
+  state = 0;
 }
 
 void draw() {
@@ -40,11 +46,34 @@ void draw() {
   //  theSpeech[i].display();
   //}    
   
-  theSpeech.move();
-  theSpeech.display();
+  if (state == 0) {
+    theSpeech[0].move();
+    theSpeech[0].display();
+    if (theSpeech[0].isFinished) {
+      state += 1;
+    }
+  }
+  if (state == 1) {
+    theSpeech[1].move();
+    theSpeech[1].display();
+    if (theSpeech[1].isFinished) {
+      state += 1;
+    }
+  }  
+  if (state == 2) {
+    theSpeech[2].move();
+    theSpeech[2].display();
+    if (theSpeech[2].isFinished) {
+      state += 1;
+    }
+  }  
+  
   theCrosshair.move();
   theCrosshair.display();
-  theSpeech.checkStatus(isFiring, theCrosshair.x, theCrosshair.y);
+  
+  for (int i=0; i<theSpeech.length; i++) {
+    theSpeech[i].checkStatus(isFiring, theCrosshair.x, theCrosshair.y);
+  }
   
   //println(str(theCrosshair.x));
   //println(str(theCrosshair.y));
