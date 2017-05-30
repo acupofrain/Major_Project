@@ -1,10 +1,12 @@
+//System speaking...
 class Statement1 extends Speech {
   Statement1() {
     super();
-    y = 250;
-    aSpeech = "I'm NO.1"; 
-    textColor = color(255, 116, 3);
-    xSpeed = -5;
+    x = -100;
+    y = 200;
+    aSpeech = "There is only one liar,"; 
+    textColor = color(0);
+    xSpeed = 5;
   }
   
   void display() {
@@ -12,7 +14,14 @@ class Statement1 extends Speech {
   }
   
   void move() {
-    super.move(); 
+    int temp = xSpeed/2;    
+    if (x >= 600) {
+      isFinished = true;
+    } else if ((x>width/4) && (x<(width/4)*2)) {
+      x += temp;
+    } else {
+      x += xSpeed;
+    }
   }
   
   void checkStatus(boolean isFiring, int crosshairX, int crosshairY) {

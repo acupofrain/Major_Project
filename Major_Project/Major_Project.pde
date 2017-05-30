@@ -9,6 +9,8 @@
 //                  multiple speeches(enemies) floating through the screen at different height and speed. I will
 //                  continue working on the collision with text part in the rest of this month.
 
+//This link is helpful: https://brilliant.org/wiki/truth-tellers-and-liars/
+
 
 Crosshair theCrosshair;
 Speech[] theSpeech;

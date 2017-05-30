@@ -1,11 +1,11 @@
-//System speaking...
-class Statement2 extends Speech {
-  Statement2() {
+//Red speaking...
+class Statement4 extends Speech {
+  Statement4() {
     super();
     x = width;
-    y = 300;
-    aSpeech = "please find it out!"; 
-    textColor = color(0);
+    y = 250;
+    aSpeech = "Blue is the liar!"; 
+    textColor = color(222, 16, 40);
     xSpeed = -5;
   }
   

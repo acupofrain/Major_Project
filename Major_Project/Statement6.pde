@@ -1,23 +1,23 @@
-//System speaking...
-class Statement2 extends Speech {
-  Statement2() {
+//Purple speaking...
+class Statement6 extends Speech {
+  Statement6() {
     super();
-    x = width;
-    y = 300;
-    aSpeech = "please find it out!"; 
+    x = -100;
+    y = 200;
+    aSpeech = "Green is not the liar!"; 
     textColor = color(0);
-    xSpeed = -5;
+    xSpeed = 5;
   }
   
-  void display() {    
+  void display() {
     super.display();
   }
   
   void move() {
-    int temp = xSpeed/2;
-    if (x <= 0) {
+    int temp = xSpeed/2;    
+    if (x >= 600) {
       isFinished = true;
-    } else if ((x>width/4) && (x<width/2)) {
+    } else if ((x>width/4) && (x<(width/4)*2)) {
       x += temp;
     } else {
       x += xSpeed;

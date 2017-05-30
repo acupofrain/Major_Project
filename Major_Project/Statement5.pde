@@ -1,10 +1,10 @@
-//Blue speaking...
-class Statement3 extends Speech {
-  Statement3() {
+//Green speaking...
+class Statement5 extends Speech {
+  Statement5() {
     super();
     x = 200;
     y = 0;
-    aSpeech = "Purple is not the liar!"; 
+    aSpeech = "Red is the liar!"; 
     textColor = color(6, 139, 203);
     xSpeed = 0;
     ySpeed = 5;
@@ -30,10 +30,3 @@ class Statement3 extends Speech {
     super.checkStatus(isFiring, crosshairX, crosshairY);
   }
 }
-
-//Might need help:
-//No response at all when shooting the tilted speech
-//Possible reason:
-//Send unrotated crosshair x-cor and y-cor to determine the status of the speech
-//Possible solution:
-//Send rotated crosshair x-cor and y-cor to check without actually rotating the crosshair
