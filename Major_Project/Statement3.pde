@@ -29,6 +29,13 @@ class Statement3 extends Speech {
   void checkStatus(boolean isFiring, int crosshairX, int crosshairY) {
     super.checkStatus(isFiring, crosshairX, crosshairY);
   }
+  
+  void replay() {
+    if (key == BACKSPACE) {
+      y = 0;
+      isFinished = false;
+    }
+  }
 }
 
 //Might need help:

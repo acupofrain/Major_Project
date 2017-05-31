@@ -10,6 +10,7 @@ class Speech {
   int crosshairX, crosshairY;
   boolean isFinished;
   float rotateAngle;
+  boolean rightAnswer, wrongAnswer;
   
   //constructor
   Speech() {
@@ -23,6 +24,8 @@ class Speech {
     ySpeed = 0;
     isFinished = false;
     rotateAngle = 0;
+    rightAnswer = false;
+    wrongAnswer = false;
   }
   
   //Speech(int _speechNumber) {
@@ -67,12 +70,20 @@ class Speech {
     
     if (isShot) {
       if ((crosshairX > x) && (crosshairX < x+speechWidth) && (crosshairY > y-speechHeight) && (crosshairY < y)) {
-        textColor = color(0);
-        xSpeed = 0;
-        ySpeed = 0;
-      } else {
+        textColor = color(198, 104, 10);
         println("wrong!");
-      }
+        wrongAnswer = true;
+      } 
+      //else {
+      //  println("not here!");
+      //}
+    }
+  }
+  
+  void replay() {
+    if (key == BACKSPACE) {
+      x = width;
+      isFinished = false;
     }
   }
 }

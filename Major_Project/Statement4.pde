@@ -25,6 +25,26 @@ class Statement4 extends Speech {
   }
   
   void checkStatus(boolean isFiring, int crosshairX, int crosshairY) {
-    super.checkStatus(isFiring, crosshairX, crosshairY);
+    isShot = isFiring;
+    this.crosshairX = crosshairX;
+    this.crosshairY = crosshairY;
+    speechWidth = int(textWidth(aSpeech));
+    
+    if (isShot) {
+      if ((crosshairX > x) && (crosshairX < x+speechWidth) && (crosshairY > y-speechHeight) && (crosshairY < y)) {
+        textColor = color(198, 104, 10);
+        xSpeed = 0;
+        ySpeed = 0;
+        println("correct!");
+        rightAnswer = true;
+      } 
+    }    
+  }
+  
+  void replay() {
+    if (key == BACKSPACE) {
+      x = width;
+      isFinished = false;
+    }
   }
 }

@@ -2,12 +2,12 @@
 class Statement5 extends Speech {
   Statement5() {
     super();
-    x = 200;
-    y = 0;
+    x = 250;
+    y = height;
     aSpeech = "Red is the liar!"; 
-    textColor = color(6, 139, 203);
+    textColor = color(70, 198, 120);
     xSpeed = 0;
-    ySpeed = 5;
+    ySpeed = -5;
   }
   
   
@@ -17,7 +17,7 @@ class Statement5 extends Speech {
   
   void move() { 
     int temp = ySpeed/2;
-    if (y >= height) {
+    if (y <= 50) {
       isFinished = true;
     } else if ((y>height/3) && (y<(height/3)*2)) {
       y += temp;
@@ -28,5 +28,12 @@ class Statement5 extends Speech {
   
   void checkStatus(boolean isFiring, int crosshairX, int crosshairY) {
     super.checkStatus(isFiring, crosshairX, crosshairY);
+  }
+  
+  void replay() {
+    if (key == BACKSPACE) {
+      y = height;
+      isFinished = false;
+    }
   }
 }

@@ -6,7 +6,7 @@ class Statement2 extends Speech {
     y = 300;
     aSpeech = "please find it out!"; 
     textColor = color(0);
-    xSpeed = -5;
+    xSpeed = -3;
   }
   
   void display() {    
@@ -26,5 +26,12 @@ class Statement2 extends Speech {
   
   void checkStatus(boolean isFiring, int crosshairX, int crosshairY) {
     super.checkStatus(isFiring, crosshairX, crosshairY);
+  }
+  
+  void replay() {
+    if (key == BACKSPACE) {
+      x = width;
+      isFinished = false;
+    }
   }
 }
