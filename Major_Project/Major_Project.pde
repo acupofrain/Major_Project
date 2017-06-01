@@ -12,14 +12,16 @@
 //This link is helpful: https://brilliant.org/wiki/truth-tellers-and-liars/
 
 
-Crosshair theCrosshair;
+Crosshair theCrosshair; //<>//
 Speech[] theSpeech;
+Timer theTimer;
 boolean movingLeft, movingRight, movingUp, movingDown, isFiring;
 int menu, state;
 
 void setup() {
   size(800, 450);
   theCrosshair = new Crosshair();
+  theTimer = new Timer();
   
   //theSpeech = new Speech[6];
   //for (int i=0; i<theSpeech.length; i++) {
@@ -38,21 +40,22 @@ void setup() {
   movingRight = false;
   movingUp = false;
   movingDown = false;
-  isFiring = false;
+  isFiring = false; //<>//
   
   state = 0;
   menu = 0;
 }
 
 void draw() {
-  if (menu == 0) {
+  if (menu == 0) { //<>//
     background(175);
     println("press enter to start");
   }
   
   if (menu == 1) {
     background(255);
-  
+    theTimer.display();
+    
     //for (int i=0; i<theSpeech.length; i++) {
     //  theSpeech[i].move();
     //  theSpeech[i].display();
@@ -113,7 +116,7 @@ void draw() {
       menu += 1;
     }
   }
-  //println(str(theCrosshair.x));
+  //println(str(theCrosshair.x)); //<>//
   //println(str(theCrosshair.y));
   
   if (menu == 2) {
