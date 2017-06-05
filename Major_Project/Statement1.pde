@@ -29,7 +29,7 @@ class Statement1 extends Speech {
   }
   
   void replay() {
-    if (key == BACKSPACE) {
+    if (key == ENTER) {
       x = -100;
       isFinished = false;
     }

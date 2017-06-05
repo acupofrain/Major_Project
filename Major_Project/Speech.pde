@@ -69,7 +69,7 @@ class Speech {
     speechWidth = int(textWidth(aSpeech));
     
     if (isShot) {
-      if ((crosshairX > x) && (crosshairX < x+speechWidth) && (crosshairY > y-speechHeight) && (crosshairY < y)) {
+      if ((crosshairX > x) && (crosshairX < x+speechWidth) && (crosshairY > y-speechHeight) && (crosshairY < y) && isFinished == false) {
         textColor = color(198, 104, 10);
         println("wrong!");
         wrongAnswer = true;

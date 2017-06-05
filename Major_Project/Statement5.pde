@@ -31,7 +31,7 @@ class Statement5 extends Speech {
   }
   
   void replay() {
-    if (key == BACKSPACE) {
+    if (key == ENTER) {
       y = height;
       isFinished = false;
     }

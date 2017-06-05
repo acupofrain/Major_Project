@@ -31,7 +31,7 @@ class Statement4 extends Speech {
     speechWidth = int(textWidth(aSpeech));
     
     if (isShot) {
-      if ((crosshairX > x) && (crosshairX < x+speechWidth) && (crosshairY > y-speechHeight) && (crosshairY < y)) {
+      if ((crosshairX > x) && (crosshairX < x+speechWidth) && (crosshairY > y-speechHeight) && (crosshairY < y) && isFinished == false) {
         textColor = color(198, 104, 10);
         xSpeed = 0;
         ySpeed = 0;
@@ -42,7 +42,7 @@ class Statement4 extends Speech {
   }
   
   void replay() {
-    if (key == BACKSPACE) {
+    if (key == ENTER) {
       x = width;
       isFinished = false;
     }

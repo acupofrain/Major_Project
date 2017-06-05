@@ -49,7 +49,8 @@ void setup() {
 void draw() {
   if (menu == 0) { //<>//
     background(175);
-    println("press enter to start");
+    textSize(30);
+    text("press enter to start", 250, 200);
   }
   
   if (menu == 1) {
@@ -120,20 +121,26 @@ void draw() {
   //println(str(theCrosshair.y));
   
   if (menu == 2) {
-    state = 0;
     background(57, 186, 224);
-    println("replay");
+    fill(255);
+    textSize(30);
+    text("Press backspace to replay", 250, 200);
     //println(state);
     //println(menu);
   }
   
   if (menu == 3) {
     background(141, 198, 10);
-    println("conguatulations!");
+    fill(255);
+    textSize(30);
+    text("conguatulations!", 250, 200);
   }
   
   if (menu == 4) {
     background(255, 0, 0);
+    fill(255);
+    textSize(30);
+    text("You're wrong!", 250, 200);
   }
 }
 
@@ -156,11 +163,13 @@ void keyPressed() {
   if (key == ' ') {
     isFiring = true;
   } 
+
   if (key == ENTER) {
-    menu += 1;
-  }
-  if (key == BACKSPACE) {
-    menu -= 1;
+    menu = 1;
+    state = 0;
+    for (int i=0; i<theSpeech.length; i++) {
+      theSpeech[i].replay();
+    }
   }
 }
 

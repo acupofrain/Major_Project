@@ -8,7 +8,7 @@ class Timer {
   Timer() {
     x = 600;
     y = 50;
-    timeLimit = 15 * 60 * 1000;
+    timeLimit = 5 * 60 * 1000;
   }
   
   //behaviours
@@ -23,8 +23,10 @@ class Timer {
     textSize(20);
     fill(2, 209, 141);
     text(minute, x, y);
-    //x += int(textWidth( )));
-    text(":", x, y);
+    text(":", x+30, y);
+    text(second, x+40, y);
+    text(":", x+70, y);
+    text(rest, x+80, y);
     
   }
 }
