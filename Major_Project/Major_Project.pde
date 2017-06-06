@@ -124,7 +124,7 @@ void draw() {
     background(57, 186, 224);
     fill(255);
     textSize(30);
-    text("Press backspace to replay", 250, 200);
+    text("Press enter to replay", 250, 200);
     //println(state);
     //println(menu);
   }
