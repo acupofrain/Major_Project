@@ -15,6 +15,7 @@
 Crosshair theCrosshair; //<>//
 Speech[] theSpeech;
 Timer theTimer;
+Button[] theButton;
 boolean movingLeft, movingRight, movingUp, movingDown, isFiring;
 int menu, state;
 
@@ -23,10 +24,10 @@ void setup() {
   theCrosshair = new Crosshair();
   theTimer = new Timer();
   
-  //theSpeech = new Speech[6];
-  //for (int i=0; i<theSpeech.length; i++) {
-  //  theSpeech[i] = new Speech(i+1);
-  //}
+  theButton = new Button[3];
+  for (int i=0; i<theButton.length; i++) {
+   theButton[i] = new Button(250+i*50);
+  }
   
   theSpeech = new Speech[6];
   theSpeech[0] = new Statement1();
@@ -49,8 +50,9 @@ void setup() {
 void draw() {
   if (menu == 0) { //<>//
     background(175);
-    textSize(30);
-    text("press enter to start", 250, 200);
+    theButton[0].display("Instruction");
+    theButton[1].display("Demo Version");
+    theButton[2].display("Story Mode");
   }
   
   if (menu == 1) {

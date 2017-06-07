@@ -10,18 +10,18 @@ class Statement4 extends Speech {
   }
   
   void display() {    
-    super.display();
+   super.display();
   }
   
   void move() {
-    int temp = xSpeed/2;
-    if (x <= 0) {
-      isFinished = true;
-    } else if ((x>width/4) && (x<width/2)) {
-      x += temp;
-    } else {
-      x += xSpeed;
-    }
+   int temp = xSpeed/2;
+   if (x <= 0) {
+     isFinished = true;
+   } else if ((x>width/4) && (x<width/2)) {
+     x += temp;
+   } else {
+     x += xSpeed;
+   }
   }
   
   void checkStatus(boolean isFiring, int crosshairX, int crosshairY) {
