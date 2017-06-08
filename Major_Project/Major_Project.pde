@@ -53,6 +53,9 @@ void draw() {
     theButton[0].display("Instruction");
     theButton[1].display("Demo Version");
     theButton[2].display("Story Mode");
+    
+    theCrosshair.move();
+    theCrosshair.display();
   }
   
   if (menu == 1) {
@@ -72,6 +75,10 @@ void draw() {
       if (theSpeech[0].isFinished || theSpeech[1].isFinished) {
         state += 1;
       }
+      //else {
+      //  theSpeech[0].checkStatus(isFiring, theCrosshair.x, theCrosshair.y);
+      //  theSpeech[1].checkStatus(isFiring, theCrosshair.x, theCrosshair.y);
+      //}
     }
     if (state == 1) {
       theSpeech[2].move();
@@ -106,12 +113,14 @@ void draw() {
     theCrosshair.display();
   
     for (int i=0; i<theSpeech.length; i++) {
-      theSpeech[i].checkStatus(isFiring, theCrosshair.x, theCrosshair.y);
-      if (theSpeech[i].rightAnswer) {
-        menu += 2;
-      }
-      else if (theSpeech[i].wrongAnswer) {
-        menu += 3;
+      if (theSpeech[i].isFinished == false) {
+        theSpeech[i].checkStatus(isFiring, theCrosshair.x, theCrosshair.y);
+        if (theSpeech[i].rightAnswer) {
+          menu += 2;
+        }
+        else if (theSpeech[i].wrongAnswer) {
+          menu += 3;
+        }
       }
     }
     
@@ -169,6 +178,7 @@ void keyPressed() {
   if (key == ENTER) {
     menu = 1;
     state = 0;
+    theTimer.begin();
     for (int i=0; i<theSpeech.length; i++) {
       theSpeech[i].replay();
     }

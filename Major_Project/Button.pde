@@ -19,6 +19,8 @@ class Button {
     buttonText = text;
     
     rectMode(CENTER);
+    stroke(0);
+    strokeWeight(1);
     fill(buttonColor);
     rect(x, y, buttonLength, buttonWidth);
     

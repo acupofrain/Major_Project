@@ -7,7 +7,6 @@ class Speech {
   int xSpeed, ySpeed;
   boolean isShot;
   //int speechNumber;
-  int crosshairX, crosshairY;
   boolean isFinished;
   float rotateAngle;
   boolean rightAnswer, wrongAnswer;
@@ -64,9 +63,13 @@ class Speech {
   
   void checkStatus(boolean isFiring, int crosshairX, int crosshairY) {
     isShot = isFiring;
-    this.crosshairX = crosshairX;
-    this.crosshairY = crosshairY;
+    //this.crosshairX = crosshairX;
+    //this.crosshairY = crosshairY;
     speechWidth = int(textWidth(aSpeech));
+    
+    //to test
+    rectMode(CORNER);
+    rect(x, y, speechWidth, -speechHeight);
     
     if (isShot) {
       if ((crosshairX > x) && (crosshairX < x+speechWidth) && (crosshairY > y-speechHeight) && (crosshairY < y) && isFinished == false) {

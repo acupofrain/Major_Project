@@ -3,17 +3,23 @@ class Timer {
   int x, y;
   int passedTime, timeLimit, remainingTime;
   int minute, second, rest;
+  int whenTimerBegan;
   
   //constructor
   Timer() {
     x = 600;
     y = 50;
     timeLimit = 5 * 60 * 1000;
+    whenTimerBegan = 0;
+  }
+  
+  void begin() {
+    whenTimerBegan = millis();
   }
   
   //behaviours
   void display() {
-    passedTime = millis();
+    passedTime = millis() - whenTimerBegan;
     remainingTime = timeLimit - passedTime;
     minute = remainingTime/(60*1000);
     second = (remainingTime - minute*60*1000)/1000;

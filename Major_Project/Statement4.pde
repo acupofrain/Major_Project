@@ -26,8 +26,8 @@ class Statement4 extends Speech {
   
   void checkStatus(boolean isFiring, int crosshairX, int crosshairY) {
     isShot = isFiring;
-    this.crosshairX = crosshairX;
-    this.crosshairY = crosshairY;
+    //this.crosshairX = crosshairX;
+    //this.crosshairY = crosshairY;
     speechWidth = int(textWidth(aSpeech));
     
     if (isShot) {
